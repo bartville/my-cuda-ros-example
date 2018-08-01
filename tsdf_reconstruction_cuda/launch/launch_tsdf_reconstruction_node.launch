@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="tsdf_reconstruction" pkg="tsdf_reconstruction_cuda" type="tsdf_reconstruction_cuda_node">
+    <param name="volume_size_x" value="512"/>
+    <param name="volume_size_y" value="512"/>
+    <param name="volume_size_z" value="512"/>
+    <param name="voxel_scale" value="2.0"/>
+    <param name="bfilter_kernel_size" value="5"/>
+    <param name="bfilter_color_sigma" value="1.0"/>
+    <param name="bfilter_spatial_sigma" value="1.0"/>
+    <param name="init_depth" value="1000.0"/>
+    <param name="use_output_frame" value="true"/>
+    <param name="truncation_distance" value="25.0"/>
+    <param name="depth_cutoff_distance" value="1000.0"/>
+    <param name="num_levels" value="3"/>
+    <param name="triangles_buffer_size" value="6000000"/> <!-- 3 * 2000000 -->
+    <param name="pointcloud_buffer_size" value="6000000"/> <!-- 3 * 2000000 -->
+    <param name="distance_threshold" value="10.0"/>
+    <param name="angle_threshold" value="20.0"/>
+    <param name="icp_iterations_l0" value="12"/>
+    <param name="icp_iterations_l1" value="5"/>
+    <param name="icp_iterations_l2" value="4"/>
+    <param name="image_width" value="640"/>
+    <param name="image_height" value="480"/>
+    <param name="focal_x" value="520"/>
+    <param name="focal_y" value="580"/>
+    <param name="principal_x" value="315.5"/>
+    <param name="principal_y" value="239.5"/>
+  </node>
+</launch>
